@@ -60,7 +60,7 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
-    - images/solarxpng.png
+    - assets/images/
 
 
   # An image asset can refer to one or more resolution-specific "variants", see
@@ -74,10 +74,15 @@ flutter:
   # "family" key with the font family name, and a "fonts" key with a
   # list giving the asset and other descriptors for the font. For
   # example:
-#  fonts:
-#     - family: oswald
-#       fonts:
-#         - assets: fonts/Oswald-VariableFont_wght.ttf
+  fonts:
+     - family: dancingscript
+       fonts:
+         - asset: assets/fonts/DancingScript-VariableFont_wght.ttf
+
+     - family: anton
+       fonts:
+         - asset: assets/fonts/Anton-Regular.ttf
+
   #       - asset: fonts/Schuyler-Italic.ttf
   #         style: italic
   #   - family: Trajan Pro
