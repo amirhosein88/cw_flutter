@@ -147,7 +147,15 @@ class _HomeViewState extends State<HomeView> {
               Expanded(
                 child: TextButton(
                     onPressed: () {
-                      print('add pressed');
+                      final date = DateTime.now();
+                      // print(date.year);
+                      // print(date.month);
+                      // print(date.day);
+                      // print(date.hour);
+                      // print(date.second);
+
+                      print('Record: $counter at ${date.year}-${date.month}-${date.day} ${date.hour}::${date.minute}::${date.second}- ' );
+
                     },
                     child: Container(
                       width: double.infinity,
