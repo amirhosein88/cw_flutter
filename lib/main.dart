@@ -18,7 +18,8 @@ class HomeView extends StatefulWidget {
 
 class _HomeViewState extends State<HomeView> {
   int counter = 0;
-
+  final List<String> recordList = [];
+  int record_counter = 0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -76,7 +77,7 @@ class _HomeViewState extends State<HomeView> {
                           fontFamily: 'anton'),
                     ),
                     Text(
-                      'Record: 0',
+                      'Record: ${record_counter.toString()}',
                       style: TextStyle(
                         fontSize: 25,
                         fontFamily: 'anton',
@@ -154,8 +155,13 @@ class _HomeViewState extends State<HomeView> {
                       // print(date.hour);
                       // print(date.second);
 
-                      print('Record: $counter at ${date.year}-${date.month}-${date.day} ${date.hour}::${date.minute}::${date.second}- ' );
+                      //print('Record: $counter at ${date.year}-${date.month}-${date.day} ${date.hour}::${date.minute}::${date.second}- ' );
+                      recordList.add('Record: $counter at ${date.year}-${date.month}-${date.day} ${date.hour}::${date.minute}::${date.second}- ' );
+                      setState(() {
+                        record_counter = recordList.length;
+                      });
 
+                      print(recordList);
                     },
                     child: Container(
                       width: double.infinity,
