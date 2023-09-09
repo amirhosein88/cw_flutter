@@ -9,8 +9,15 @@ void main(List<String> args) {
   );
 }
 
-class HomeView extends StatelessWidget {
+class HomeView extends StatefulWidget {
   const HomeView({super.key});
+
+  @override
+  State<HomeView> createState() => _HomeViewState();
+}
+
+class _HomeViewState extends State<HomeView> {
+  int counter = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -61,7 +68,8 @@ class HomeView extends StatelessWidget {
                   flex: 1,
                   child: Column(children: [
                     Text(
-                      '0',
+                      counter.toString(),
+                      //'0',
                       style: TextStyle(
                           color: Color(0xFF145588),
                           fontSize: 125,
@@ -105,24 +113,29 @@ class HomeView extends StatelessWidget {
               Expanded(
                 child: TextButton(
                     onPressed: () {
-                      print('saved pressed');
+                      setState(() {
+                        counter++;
+                      });
+
+                      //print('saved pressed');
                     },
                     child: Container(
                       width: double.infinity,
                       alignment: Alignment.center,
-                      padding: EdgeInsets.symmetric(horizontal: 12.0 , vertical: 5),
+                      padding:
+                          EdgeInsets.symmetric(horizontal: 12.0, vertical: 5),
                       decoration: BoxDecoration(
-                          color:const Color(0xFF145588),
-                          borderRadius: BorderRadius.circular(20.0),
+                        color: const Color(0xFF145588),
+                        borderRadius: BorderRadius.circular(20.0),
                       ),
-                      child:const Text('Add' ,
-                      style: TextStyle(
-                        fontSize: 50,
-                        fontFamily: 'anton',
-                        color: Colors.white,
-                      )
-
-                        , ),
+                      child: const Text(
+                        'Add',
+                        style: TextStyle(
+                          fontSize: 50,
+                          fontFamily: 'anton',
+                          color: Colors.white,
+                        ),
+                      ),
 
                       // style: TextStyle(
                       //     fontSize: 50,
@@ -139,20 +152,20 @@ class HomeView extends StatelessWidget {
                     child: Container(
                       width: double.infinity,
                       alignment: Alignment.center,
-                      padding: EdgeInsets.symmetric(horizontal: 12.0 , vertical: 5),
+                      padding:
+                          EdgeInsets.symmetric(horizontal: 12.0, vertical: 5),
                       decoration: BoxDecoration(
-                        color:const Color(0xFF145588),
+                        color: const Color(0xFF145588),
                         borderRadius: BorderRadius.circular(20.0),
                       ),
-                      child:const Text(
-                        'Save' ,
+                      child: const Text(
+                        'Save',
                         style: TextStyle(
                           fontSize: 50,
                           fontFamily: 'anton',
                           color: Colors.white,
-                        )
-
-                        , ),
+                        ),
+                      ),
 
                       // style: TextStyle(
                       //     fontSize: 50,
